@@ -1,0 +1,29 @@
+{
+    "plugins": [
+        "disqus",
+        "exercises",
+        "ba",
+        "autocover",
+        "back-to-top-button",
+        "betterchinese",
+        "blog",
+        "catalog",
+        "chart",
+        "codesnippet",
+        "diy-introduction",
+        "donate",
+        "duoshuo",
+        "echarts",
+        "feed",
+        "katex",
+        "mathjax-full",
+        "pdf-styling",
+        "search-pro",
+        "sitemap-codingbelief",
+        "tbfed-pagefooter",
+        "theme-creative",
+        "theme-ztbcms-docs",
+        "toc-for-3",
+        "tree"
+    ]
+}
