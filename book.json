@@ -2,21 +2,12 @@
     "plugins": [
         
         "exercises",
-        
-      
-       
         "betterchinese",
-      
-     
         "chart",
         "codesnippet",
-     
-     
         "echarts",
-      
         "tbfed-pagefooter",
         "theme-creative",
-   
         "toc-for-3",
         "tree"
     ]
