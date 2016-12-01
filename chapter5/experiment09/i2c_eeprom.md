@@ -1,14 +1,14 @@
 # 实验九. 基于IIC接口的EEPROM读写实验
 ----------
 ## 1. 实验目的
-- 熟悉IIC总线驱动，能够通过JNI对IIC从设备EEPROM进行读写操作;
+- 熟悉IIC设备驱动，能够通过JNI对IIC从设备EEPROM进行读写操作;
 
 ## 2. 实验环境
 - 硬件：CBT-EMB-MIP 实验平台,PC机,mini USB数据线;
 - 软件：Android Studio;
 
 ## 3. 实验内容
-- 学习IIC总线驱动，然后编写应用层操作IIC适配器来控制EEPROM。
+- 学习IIC设备驱动，然后编写应用层操作IIC从设备来控制EEPROM。
 
 ## 4. 实验原理
 &emsp;&emsp;文字引用：巴拉巴拉
