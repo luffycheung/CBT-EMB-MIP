@@ -1,8 +1,2 @@
-{% extends "./mytemplate.md" %}
-
-{% block pageContent %}
-
-
-{% endblock %}
-
+# 实验八. 基于IIC接口的ADXL345三轴加速度实验
 
