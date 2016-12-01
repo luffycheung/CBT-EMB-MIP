@@ -9,3 +9,11 @@ CAN 全称为 ControllerArea Network，即控制器局域网，是国际上应�
 
 ## EEPROM
 EEPROM，或写作E2PROM，全称电子抹除式可复写只读内存 （英语：Electrically-Erasable Programmable Read-Only Memory），是一种可以通过电子方式多次复写的半导体存储设备。相比EPROM，EEPROM不需要用紫外线照射，也不需取下，就可以用特定的电压，来抹除芯片上的信息，以便写入新的数据。
+
+## 总线驱动
+总线驱动：在linux驱动架构中，几乎不需要驱动开发人员再添加bus，因为linux内核几乎集成所有总线bus，如usb、pci、i2c等等，并且总线bus中的（与特定硬件相关的代码）已由芯片提供商编写完成。例如TI davinci平台i2c总线bus与硬件相关的代码在内核目录/drivers/i2c/buses下的i2c-davinci.c源文件中；而三星的s3c-2440平台i2c总线bus为/drivers/i2c/buses/i2c-s3c2410.c。
+ 
+
+## 设备驱动
+设备驱动：与特定设备相关的就需要驱动工程师来实现了。
+与总线驱动关系：如拿i2c来说，linux内核和芯片提供商已经为我们的驱动程序提供了i2c驱动的框架，以及框架底层与硬件相关的代码的实现。一般情况下，对驱动开发人员来讲，剩下的就是针对挂载在i2c两线上的i2c设备，编写具体的设备驱动了，这里的设备是指soc外部挂载的设备，并不包含集成在soc内部的设备，如i2c控制器，反而集成在soc内部设备的驱动可以理解为总线驱动。
