@@ -10,6 +10,5 @@
     * [实验一. Android Ubuntu开发环境搭建](chapter2/experiment01/android_ubuntu_dev.md)
     * [实验二. Android Windows系统环境搭建](chapter2/experiment02/android_windows_dev.md)
         * [Test](chapter2/experiment02/test.md)
-* [chapter3](chapter3.md)
 * [附录一：有用的资源](appendix_resources/README.md)
 
