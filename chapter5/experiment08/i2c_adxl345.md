@@ -1,4 +1,4 @@
-{% extends "../../mytemplate.md" %}
+{% extends "./mytemplate.md" %}
 
 {% block pageContent %}
 
