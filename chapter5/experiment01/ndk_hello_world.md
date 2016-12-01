@@ -113,7 +113,7 @@ APK Analyzer:
 
 1.  选择 **Build \> Analyze APK**。
 2.  从 `app/build/outputs/apk/` 路径中选择 APK，并点击 **OK**。
-3.  如下图，在 APK Analyzer 窗口中，选择 `lib/<ABI>/`，你就可以看见
+3.  如下图，在 APK Analyzer 窗口中，选择 `lib/\<ABI\>/`，你就可以看见
     `libnative-lib.so` 。
 
 ![Figer-3.png-58.5kB](http://static.zybuluo.com/wl9739/ei2c0h7dftdi8tp9nuafvt30/Figer-3.png)
