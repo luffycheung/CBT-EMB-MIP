@@ -1,4 +1,4 @@
-# Summary
+﻿# Summary
 
 * [Introduction](README.md)
 * [第一章.  开发平台简介](chapter1/README.md)
@@ -8,7 +8,25 @@
     * [平台软件资源](chapter1/software_resources.md)
 * [第二章.  Android开发环境搭建](chapter2/README.md)
     * [实验一. Android Ubuntu开发环境搭建](chapter2/experiment01/android_ubuntu_dev.md)
-    * [实验二. Android Windows系统环境搭建](chapter2/experiment02/android_windows_dev.md)
-        * [Test](chapter2/experiment02/test.md)
+    * [实验二. Android SDK Windows系统环境搭建](chapter2/experiment02/android_sdk_windows_dev.md)
+    * [实验三. Android NDK Windows系统环境搭建](chapter2/experiment03/android_ndk_windows_dev.md)
+        * [Test](chapter2/experiment03/test.md)
+* [第三章.  Android SDK开发](chapter3/README.md)
+    * [实验一. Android ADB调试实验](chapter3/experiment01/android_adb_debug.md)
+    * [实验二. Intent 组件间通讯实验](chapter3/experiment02/intent.md)
+* [第四章.  Android系统架构实验](chapter4/README.md)
+    * [实验一.  Android 内核移植与编译实验](chapter4/experiment01/android_kernel.md)
+    * [实验二. Android 文件系统实验](chapter4/experiment02/android_fs.md)
+* [第五章.  Android NKD开发](chapter5/README.md)
+    * [实验一. 板载LED灯控制实验](chapter5/experiment01/onboard_led_control.md)
+    * [实验二. 七段数码管控制实验](chapter5/experiment02/7_segmentLED.md)
+    * [实验三. 步进电机控制实验](chapter5/experiment03/stepping_motor.md)
+    * [实验四. 基于ADC接口的电位器及光敏电阻开发实验](chapter5/experiment04/adc.md)
+    * [实验五. 基于PWM的无源蜂鸣器控制实验](chapter5/experiment05/pwm_buzzer.md)
+    * [实验六. 基于PWM控制的直流电机驱动实验](chapter5/experiment06/pwm_dc_motor.md)
+    * [实验七. 红外接收实验](chapter5/experiment07/ir.md)
+    * [实验八. 基于IIC接口的ADXL345三轴加速度开发实验](chapter5/experiment08/i2c_adxl345.md)
+    * [实验九. 基于IIC接口的EEPROM读写实验](chapter5/experiment09/i2c_eeprom.md)
+    * [实验十. 基于IIC接口的FM收音机开发实验](chapter5/experiment10/i2c_fm.md)
 * [附录一：有用的资源](appendix_resources/README.md)
 
