@@ -11,7 +11,7 @@
 - 学习IIC设备驱动，然后编写应用层操作IIC从设备来控制EEPROM。
 
 ## 4. 实验原理
-&emsp;&emsp;从第四章-->实验四. EEPROM设备驱动移植实验章节，了解到系统启动后会在目录`/sys/devices/platform/s3c2440-i2c.0/i2c-0/0-0050/`下生成`eeprom`的一个普通文件。   
+&emsp;&emsp;从第四章-->实验四. EEPROM设备驱动移植实验章节中可了解到系统启动后会在目录`/sys/devices/platform/s3c2440-i2c.0/i2c-0/0-0050/`下生成`eeprom`的一个普通文件。   
 
 &emsp;&emsp;因此，可以通过在JNI层编写文件I/O操作的相关代码即可完成对EEPROM的读写。
 
