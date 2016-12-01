@@ -30,4 +30,5 @@
     * [实验十. 基于IIC接口的FM收音机开发实验](chapter5/experiment10/i2c_fm.md)
 * [附录一：有用的资源](appendix_resources/README.md)
 * [mytemplate](mytemplate.md)
+* [GLOSSARY](glossary.md)
 
