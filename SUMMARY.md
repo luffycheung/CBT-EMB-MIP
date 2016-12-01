@@ -1,4 +1,4 @@
-﻿# Summary
+# Summary
 
 * [Introduction](README.md)
 * [第一章.  开发平台简介](chapter1/README.md)
@@ -29,4 +29,5 @@
     * [实验九. 基于IIC接口的EEPROM读写实验](chapter5/experiment09/i2c_eeprom.md)
     * [实验十. 基于IIC接口的FM收音机开发实验](chapter5/experiment10/i2c_fm.md)
 * [附录一：有用的资源](appendix_resources/README.md)
+* [mytemplate](mytemplate.md)
 
