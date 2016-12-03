@@ -16,7 +16,7 @@
     * [实验二. Intent 组件间通讯实验](chapter3/experiment02/intent.md)
 * [第四章.  Android系统架构实验](chapter4/README.md)
     * [实验一. Android 内核移植与编译实验](chapter4/experiment01/android_kernel.md)
-    * [实验二. AT24C02(EEPROM)驱动移植实验](chapter4/experiment02/kernel_eeprom.md)
+    * [实验二. 基于IIC总线的EEPROM驱动移植实验](chapter4/experiment02/kernel_eeprom.md)
     * [实验三. Android 文件系统实验](chapter4/experiment03/android_fs.md)
 * [第五章.  Android NKD开发](chapter5/README.md)
     * [实验一. Android NDK之Hello World开发入门实验](chapter5/experiment01/ndk_hello_world.md)
