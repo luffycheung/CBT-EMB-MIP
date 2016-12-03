@@ -62,7 +62,7 @@ linux-3.5内核中已经包含at24cxx芯片的驱动源码，具体位置为：
 
 > _include/linux/i2c/at24.h _
 >
-> _/drivers/misc/eeprom/at24.c  
+> _/drivers/misc/eeprom/at24.c    
 > _
 
 修改板级支持包文件: arch/arm/mach-exynos/mach-tiny.c
@@ -100,5 +100,5 @@ static struct i2c_board_info smdk4x12_i2c_devs0[] __initdata = {
 
 **3.编译并烧写内核**
 
-
+**4.在终端中查看eeprom设备**
 
