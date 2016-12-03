@@ -13,7 +13,7 @@
 
 ## 3. 实验内容
 
-* 学习IIC设备驱动，然后编写应用层操作IIC从设备来控制EEPROM。
+* 学习IIC设备驱动，然后使用Android Stuido创建JNI项目操作IIC从设备来控制EEPROM。
 
 ## 4. 实验原理
 
