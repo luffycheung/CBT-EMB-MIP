@@ -62,7 +62,8 @@ linux-3.5内核中已经包含at24cxx芯片的驱动源码，具体位置为：
 
 > _include/linux/i2c/at24.h _
 >
-> _/drivers/misc/eeprom/at24.c_
+> _/drivers/misc/eeprom/at24.c  
+> _
 
 修改板级支持包文件: arch/arm/mach-exynos/mach-tiny.c
 
@@ -97,11 +98,7 @@ static struct i2c_board_info smdk4x12_i2c_devs0[] __initdata = {
 
 其最低位是读写标志位，但是在Linux中，I2C设备地址的最高位为0，而低七位地址就是手册中去掉R/W的剩余7位。在_**4.实验原理**_中可知A2 A1 A0引脚接GND，因此，地址为0b 01010000（0x50）。
 
-3.步骤3
+**3.编译并烧写内核**
 
-巴拉巴拉
 
-4.步骤4
-
-巴拉巴拉
 
