@@ -46,7 +46,8 @@ Google 明确声明该API是稳定的，在后续所有版本中都稳定支持�
 > JNI（Java NativenInterface）是java与C/C++进行通信的一种技术，使用JNI技术，可以java调用C/C++的函数对象等等，Android中的Framework层与Native层就是采用的JNI技术。
 
 我们知道，Android系统是基于linux开发，采用的是linux内核 ，Android APP开发大部分也要和系统打交道，只是Android FrameWork 帮我们处理了和系统相关的操作， 我们从Android 系统的分成结构可以看出，Android FrameWork是通过JNI与底层的C/C++库交互，例如：FreeType，OpenGL，SQLite，音视频等等。
-![Android系统框图][1]
+![Android系统框图][1]   
+
 如果我们程序也需要调用自己的C/C++函数库，就必须用到JNI/NDK开发。
 
 ###Cmake
@@ -60,23 +61,14 @@ Google 明确声明该API是稳定的，在后续所有版本中都稳定支持�
 4. 不需要配置命令行操作,手动的生成头文件,不需要配置android.useDeprecatedNdk=true 属性
 
 
+
+
 使用 Android studio，你可以将 C 和 C++ 代码编译成 native library（即 .so  
-
 文件），然后打包到你的 APK 中。你的 Java 代码可以通过 Java Native  
-
 Interface（JNI）调用 native library 中的方法。
 
 
-
-
-Android Studio 默认使用 CMake 编译原生库。由于已经有大量的代码使用了  
-
-ndk-build 来编译 native code，所以 Android Studio 同样也支持 ndk  
-
-build。如果你想导入一个 ndk-build 库到你的 Android Studio  
-
-项目中，请参阅后文的 **关联本地库与 Gradle**。然而，如果你创建了一个新的  
-
+Android Studio 默认使用 CMake 编译原生库。由于已经有大量的代码使用了ndk-build 来编译 native code，所以Android Studio同样也支持 ndk build。如果你想导入一个 ndk-build 库到你的 Android Studio项目中，请参阅后文的 **关联本地库与 Gradle**。然而，如果你创建了一个新的
 native 库工程，你应该使用 CMake。
 
 
