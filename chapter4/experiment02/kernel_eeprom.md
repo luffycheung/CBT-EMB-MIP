@@ -36,9 +36,24 @@ AT24CXX中带有片内地址寄存器。每写入或读出一个数据字节后�
 
 1.配置内核
 
-打开I2C支持
+* 打开I2C支持
 
-  
+
+  │     -&gt; Device Drivers                                                                             │  
+
+  │       -&gt; I2C support \(I2C \[=y\]\) 
+
+* 打开杂项设备，该选项打开后，EEPROM也就打开了。
+
+
+   Location:                                                                                       │  
+
+  │     -&gt; Device Drivers                                                                             │  
+
+  │       -&gt; Misc devices                                                                             │  
+
+  │         -&gt; EEPROM support    
+
 行内代码块 `code`
 
 2.步骤2
