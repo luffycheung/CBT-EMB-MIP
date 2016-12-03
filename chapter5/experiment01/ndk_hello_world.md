@@ -5,7 +5,7 @@
 原文链接：[Add C and C++ Code to Your  
 Project](https://developer.android.com/studio/projects/add-native-code.html#existing-project)
 
-> **NDK简介   **  
+ **NDK简介**  
 > （英语：native development kit，简称NDK）是一种基于原生程序接口的软件开发工具。通过此工具开发的程序直接以本地语言运行，而非虚拟机。因此只有java等基于虚拟机运行的语言的程序才会有原生开发工具包。
 
   
