@@ -5,13 +5,14 @@
 原文链接：[Add C and C++ Code to Your  
 Project](https://developer.android.com/studio/projects/add-native-code.html#existing-project)
 
- **NDK简介**  
+## **NDK简介**
+
 > （英语：native development kit，简称NDK）是一种基于原生程序接口的软件开发工具。通过此工具开发的程序直接以本地语言运行，而非虚拟机。因此只有java等基于虚拟机运行的语言的程序才会有原生开发工具包。
 
-  
-NDK是一系列工具的集合
+1. NDK是一系列工具的集合
 
-NDK提供了一系列的工具，帮助开发者快速开发C（或C++）的动态库，并能自动将so和java应用一起打包成apk。这些工具对开发者的帮助是巨大的.  
+
+NDK提供了一系列的工具，帮助开发者快速开发C（或C++）的动态库，并能自动将so和java应用一起打包成apk。这些工具对开发者的帮助是巨大的。  
 NDK集成了交叉编译器，并提供了相应的mk文件隔离CPU、平台、ABI等差异，开发人员只需要简单修改mk文件（指出“哪些文件需要编译”、“编译特性要求”等），就可以创建出so。
 
 NDK可以自动地将so和Java应用一起打包，极大地减轻了开发人员的打包工作。  
@@ -181,7 +182,7 @@ CMake 命令。CMake 构建脚本是一个空白的文本文档（后缀为 .txt
 
 现在，你可以添加 CMake 命令来配置你的构建脚本了。为了让 CMake  
 将源代码（native source code）编译成 native  
-library。需要在编译文件中添加 `cmake_minimum_required() 和    
+library。需要在编译文件中添加 `cmake_minimum_required() 和      
 add_library() 命令：`
 
 ```
@@ -207,10 +208,10 @@ add_library( # Specifies the name of the library.
             src/main/cpp/native-lib.cpp )
 ```
 
-当你使用 `add_library()，将一个源文件（source file）或库添加到你的    
-CMake 构建脚本，同步你的项目，然后你会发现 Android studio    
-将关联的头文件也显示了处理。然而，为了让 CMake    
-在编译时期能定位到你的头文件，你需要在 CMake 构建脚本中添加    
+当你使用 `add_library()，将一个源文件（source file）或库添加到你的      
+CMake 构建脚本，同步你的项目，然后你会发现 Android studio      
+将关联的头文件也显示了处理。然而，为了让 CMake      
+在编译时期能定位到你的头文件，你需要在 CMake 构建脚本中添加      
 include_directories() 命令，并指定头文件路径：`
 
 ```
@@ -225,7 +226,7 @@ include_directories(src/main/cpp/include/)
 `lib*library-name*.so`
 
 比如，如果你在构建脚本中，将 library 命名为 “native-lib”，那么 CMake  
-会创建叫 `libnative-lib.so 的文件。但是，当你将 library 加载到 Java    
+会创建叫 `libnative-lib.so 的文件。但是，当你将 library 加载到 Java      
 代码中的时候， 你需要使用在 CMake 中指定的名称：`
 
 ```
@@ -239,7 +240,7 @@ static {
 > **Build &gt; Clean Project**。
 
 Android Studio 会在 Project 面板中的 cpp  
-目录中自动添加源文件和头文件。你可以多次使用 `add_library()    
+目录中自动添加源文件和头文件。你可以多次使用 `add_library()      
 命令，来添加额外的 library。`
 
 ### 添加 NDK APIs {#添加-NDK-APIs}
@@ -252,10 +253,10 @@ CMakeLists.txt 脚本文件中，就可以使用这些 API 了。
 NDK librarys 已经是 CMake 搜索路径的一部分，你甚至不需要提供你本地安装的  
 NDK 路径。你只需要向 CMake 提供你想使用的 library 名字。
 
-将 `find_library() 命令添加到你的 CMake 构建脚本中，这样就可以定位 NDK    
-library    
-的位置，并将其位置存储在一个变量之中。你可以在构建脚本的其他地方使用这个变量，来代指    
-NDK library。下面的示例代码将 Android-specific log support library    
+将 `find_library() 命令添加到你的 CMake 构建脚本中，这样就可以定位 NDK      
+library      
+的位置，并将其位置存储在一个变量之中。你可以在构建脚本的其他地方使用这个变量，来代指      
+NDK library。下面的示例代码将 Android-specific log support library      
 的位置存储到变量 log-lib 中：`
 
 ```
@@ -270,14 +271,14 @@ find_library( # Defines the name of the path variable that stores the
 
 NDK 同样也包含一些只包含源码的  
 library，这些就需要你去编译，然后链接到你的本地库（native  
-library）。你可以在 CMake 构建脚本中使用 `add_library()    
-命令将源码编译进本地库。这时就需要提供你的本地 NDK    
-安装路径，通常将该路径保存在 ANDROID_NDK 变量中，这样 Android Studio    
+library）。你可以在 CMake 构建脚本中使用 `add_library()      
+命令将源码编译进本地库。这时就需要提供你的本地 NDK      
+安装路径，通常将该路径保存在 ANDROID_NDK 变量中，这样 Android Studio      
 可以自动为你识别。`
 
 下面的命令告诉 CMake 去构建  
-`android_native_app_glue.c，这个命令可以管理 NativeActivity    
-的生命周期以及点击输入，并将其导入静态库中，然后将其链接至    
+`android_native_app_glue.c，这个命令可以管理 NativeActivity      
+的生命周期以及点击输入，并将其导入静态库中，然后将其链接至      
 native-lib：`
 
 ```
@@ -292,7 +293,7 @@ target_link_libraries( native-lib app-glue ${log-lib} )
 ### 添加其他的预编译库
 
 添加预编译库和添加本地库（native  
-library）类似。由于预编译库是已经构建好的，你想就要使用 `IMPORTED    
+library）类似。由于预编译库是已经构建好的，你想就要使用 `IMPORTED      
 标志去告诉 CMake ，你只需要将其导入到你的项目中即可：`
 
 ```
@@ -301,13 +302,13 @@ add_library( imported-lib
              IMPORTED )
 ```
 
-然后你需要使用 `set_target_properties()    
+然后你需要使用 `set_target_properties()      
 命令去指定库的路径，就像下面的代码那样。`
 
 一些库会根据不同的 CPU 使用不同的包，或者是  
-`Application Binary Interfaces(ABI)，并且将他们归类到不同的目录中。这样做的好处是，可以充分发挥特定的    
-CPU 架构。你可以使用 ANDROID_ABI 路径变量，将多个 ABI    
-版本的库添加到你的 CMake 构建脚本中。这个变量使用了一些 NDK 默认支持的    
+`Application Binary Interfaces(ABI)，并且将他们归类到不同的目录中。这样做的好处是，可以充分发挥特定的      
+CPU 架构。你可以使用 ANDROID_ABI 路径变量，将多个 ABI      
+版本的库添加到你的 CMake 构建脚本中。这个变量使用了一些 NDK 默认支持的      
 ABI，以及一些需要手动配置到 Gradle 的 ABI，比如：`
 
 ```
@@ -329,7 +330,7 @@ set_target_properties( # Specifies the target library.
 include_directories( imported-lib/include/ )
 ```
 
-在 CMake 构建脚本中使用 `target_link_libraries()    
+在 CMake 构建脚本中使用 `target_link_libraries()      
 命令，将预构建库与你本地库相关联：`
 
 ```
@@ -359,8 +360,8 @@ ndk-build 项目关联起来。
    Gradle\*\*。你应该能看见一个和下图很像的对话框。
 3. 在下拉菜单中，选择 **CMake** 或者 **ndk-build**。\  
     a. 如果你选择 **CMake**，需要在 **Project Path** 中指定  
-   `CMakeLists.txt 脚本文件的路径。\    
-    b. 如果你选择`**`ndk-build`**`，你需要在`**`Project Path`**`中指定    
+   `CMakeLists.txt 脚本文件的路径。\      
+    b. 如果你选择`**`ndk-build`**`，你需要在`**`Project Path`**`中指定      
    Android.mk 脚本文件的路径。`
 
    ![Figure
@@ -372,7 +373,7 @@ ndk-build 项目关联起来。
 ### 手动配置 Gradle {#手动配置-Gradle}
 
 如果要手动将 Gradle 与你的本地库相关联，你需要在 module 层级的  
-build.gradle 文件中添加 `externalNativeBuild {}    
+build.gradle 文件中添加 `externalNativeBuild {}      
 代码块，并且在该代码块中配置 cmake {} 或 ndkBuild {}：`
 
 ```
@@ -396,8 +397,8 @@ android {
 
 #### 可选配置
 
-你可以在你的 module 层级的 build.gradle 文件中的 `defaultConfig {}    
-代码块中，添加 externalNativeBuild {} 代码块，为 CMake 或 ndk-build    
+你可以在你的 module 层级的 build.gradle 文件中的 `defaultConfig {}      
+代码块中，添加 externalNativeBuild {} 代码块，为 CMake 或 ndk-build      
 配置一些额外参数。当然，你也可以在你的构建配置中的其他每一个生产渠道重写这些属性。`
 
 比如，如果你的 CMake 或者 ndk-build  
@@ -467,8 +468,8 @@ android {
 
 #### 指定 ABI {#指定-ABI}
 
-一般情况下，Gradle 会将你的本地库构建成 `.so 文件，然后将其打包到你的    
-APK 中。如果你想 Gradle 构建并打包某个特定的 ABI 。你可以在你的 module    
+一般情况下，Gradle 会将你的本地库构建成 `.so 文件，然后将其打包到你的      
+APK 中。如果你想 Gradle 构建并打包某个特定的 ABI 。你可以在你的 module      
 层级的 build.gradle 文件中使用 ndk.abiFilters 标签来指定他们：`
 
 ```
@@ -493,11 +494,11 @@ android {
 }
 ```
 
-大多数情况，你只需要像上面的代码那样，在 `ndk {} 代码块中指定    
-abiFilters 即可。如果你想控制 Gradle    
-构建、依赖你希望的东西，你就需要在    
-defaultConfig.externalNativeBuild.cmake {} 代码块或    
-defaultConfig.externalNativeBuild.ndkBuild {} 代码块中，配置其他的    
-abiFilters 标签。Gradle 会构建这些 ABI 配置，但是只会将    
+大多数情况，你只需要像上面的代码那样，在 `ndk {} 代码块中指定      
+abiFilters 即可。如果你想控制 Gradle      
+构建、依赖你希望的东西，你就需要在      
+defaultConfig.externalNativeBuild.cmake {} 代码块或      
+defaultConfig.externalNativeBuild.ndkBuild {} 代码块中，配置其他的      
+abiFilters 标签。Gradle 会构建这些 ABI 配置，但是只会将      
 defaultConfig.ndk {} 代码块中指定的东西打包到 APk 中。`
 
