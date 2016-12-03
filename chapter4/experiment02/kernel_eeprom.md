@@ -34,9 +34,11 @@ AT24CXX中带有片内地址寄存器。每写入或读出一个数据字节后�
 
 ## 5. 实验步骤
 
-1.配置内核
+**1.配置内核**
 
-* 打开I2C支持
+linux-3.5内核源码
+
+* _打开I2C支持_
 
 Location:
 
@@ -44,7 +46,7 @@ Location:
 >
 > │       -&gt; I2C support \(I2C \[=y\]\)
 
-* 打开杂项设备，该选项打开后，EEPROM也就打开了。
+* _打开杂项设备，该选项打开后，EEPROM也就打开了。_
 
 Location:
 
@@ -56,7 +58,7 @@ Location:
 
 行内代码块 `code`
 
-2.修改代码,在内核中增加AT24CXX设备配置
+**2.修改代码,在内核中增加AT24CXX设备配置**
 
 修改文件: arch/arm/mach-exynos/mach-tiny.c
 
