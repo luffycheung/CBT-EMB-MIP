@@ -28,7 +28,7 @@
     * [实验七. 基于PWM控制的直流电机驱动实验](chapter5/experiment07/pwm_dc_motor.md)
     * [实验八. 红外接收实验](chapter5/experiment08/ir.md)
     * [实验九. 基于IIC总线的ADXL345三轴加速度开发实验](chapter5/experiment09/i2c_adxl345.md)
-    * [实验十. 基于IIC接口的EEPROM读写实验](chapter5/experiment10/i2c_eeprom.md)
+    * [实验十. 基于IIC总线的EEPROM读写实验](chapter5/experiment10/i2c_eeprom.md)
     * [实验九. 基于IIC接口的ADXL345三轴加速度开发实验](chapter5/experiment09/i2c_adxl345.md)
 * [附录一：有用的资源](appendix_resources/README.md)
 * [mytemplate](mytemplate.md)
