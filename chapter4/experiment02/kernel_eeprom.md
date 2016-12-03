@@ -60,39 +60,26 @@ Location:
 
 修改文件: arch/arm/mach-exynos/mach-tiny.c
 
-增加如下代码:
+增加如下代码:   
 
-\#ifdef CONFIG\_EEPROM\_AT24
-
-\#include &lt;linux/i2c/at24.h&gt;
-
-static struct at24\_platform\_data at24c02 = {
-
-.byte\_len = SZ\_2K / 8,
-
-.page\_size = 8,
-
-.flags = 0,
-
+```
+#ifdef CONFIG_EEPROM_AT24
+#include <linux/i2c/at24.h>
+static struct at24_platform_data at24c02 = {
+	.byte_len = SZ_2K / 8,
+	.page_size = 8,
+	.flags = 0,
 };
-
-\#endif
-
-static struct i2c\_board\_info smdk4x12\_i2c\_devs0\[\] \_\_initdata = {
-
-\#ifdef CONFIG\_EEPROM\_AT24
-
-{
-
-I2C\_BOARD\_INFO\("24c02", 0x50\),
-
-.platform\_data = &at24c02,
-
-},
-
-\#endif
-
+#endif
+static struct i2c_board_info smdk4x12_i2c_devs0[] __initdata = {
+#ifdef CONFIG_EEPROM_AT24
+	{
+		I2C_BOARD_INFO("24c02", 0x50),
+		.platform_data = &at24c02,
+	},
+#endif
 };
+```
 
 代码说明：AT24CXX使用8位地址，内存大小2K比特位，也就是256K字节，页大小为8字节。
 
