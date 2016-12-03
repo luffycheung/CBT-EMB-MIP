@@ -60,32 +60,36 @@ Location:
 
 修改文件: arch/arm/mach-exynos/mach-tiny.c
 
-增加如下代码:   
+增加如下代码:
 
 ```
 #ifdef CONFIG_EEPROM_AT24
 #include <linux/i2c/at24.h>
 static struct at24_platform_data at24c02 = {
-	.byte_len = SZ_2K / 8,
-	.page_size = 8,
-	.flags = 0,
+    .byte_len = SZ_2K / 8,
+    .page_size = 8,
+    .flags = 0,
 };
 #endif
 static struct i2c_board_info smdk4x12_i2c_devs0[] __initdata = {
 #ifdef CONFIG_EEPROM_AT24
-	{
-		I2C_BOARD_INFO("24c02", 0x50),
-		.platform_data = &at24c02,
-	},
+    {
+        I2C_BOARD_INFO("24c02", 0x50),
+        .platform_data = &at24c02,
+    },
 #endif
 };
 ```
 
-**代码说明**：AT24CXX使用8位地址，内存大小2K比特位，也就是256K字节，页大小为8字节。    
-  
-手册中at24c02的设备地址是
+**代码说明**：AT24CXX使用8位地址，内存大小2K比特位，也就是256K字节，页大小为8字节。
 
-0b 1 0 1 0 0 0 0 R/W， 其最低位是读写标志位，
+手册中AT24CXX的设备地址是
+
+| 1 | 0 | 1 | 0 | A2 | A1 | A0 | R/W |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+
+
+0b 1 0 1 0 0 0 0 R/W， 其最低位是读写标志位，  
 但是在Linux中，I2C设备地址的最高位为0，而低七位地址就是手册中去掉R/W的剩余7位。因此，地址为0b 01010000（0x50）
 
 3.步骤3
