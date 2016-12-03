@@ -9,8 +9,6 @@
 * [第二章.  Android开发环境搭建](chapter2/README.md)
     * [实验一. Android Ubuntu开发环境搭建](chapter2/experiment01/android_ubuntu_dev.md)
     * [实验二. Android SDK Windows系统环境搭建](chapter2/experiment02/android_sdk_windows_dev.md)
-    * [实验三. Android NDK Windows系统环境搭建](chapter2/experiment03/android_ndk_windows_dev.md)
-        * [Test](chapter2/experiment03/test.md)
 * [第三章.  Android SDK开发](chapter3/README.md)
     * [实验一. Android ADB调试实验](chapter3/experiment01/android_adb_debug.md)
     * [实验二. Intent 组件间通讯实验](chapter3/experiment02/intent.md)
