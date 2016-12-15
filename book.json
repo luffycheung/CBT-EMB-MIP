@@ -1,7 +1,6 @@
 {
     "plugins": [
         "codeblock-disable-glossary",
-        "exercises",
         "betterchinese",
         "chart",
         "codesnippet",
