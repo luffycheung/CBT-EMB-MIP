@@ -12,7 +12,7 @@
 * [第三章.  Android SDK开发](chapter3/README.md)
     * [实验一. Android ADB调试实验](chapter3/experiment01/android_adb_debug.md)
     * [实验二. Intent 组件间通讯实验](chapter3/experiment02/intent.md)
-* [第四章.  Android内核及核心框架层开发](chapter4/README.md)
+* [第四章.  Android 内核及核心框架层开发](chapter4/README.md)
     * [实验一. Android 内核移植与编译实验](chapter4/experiment01/android_kernel.md)
     * [实验二. 基于IIC总线的EEPROM驱动移植实验](chapter4/experiment02/kernel_eeprom.md)
     * [实验三. Android 文件系统实验](chapter4/experiment03/android_fs.md)
