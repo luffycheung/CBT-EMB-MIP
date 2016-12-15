@@ -13,7 +13,6 @@
     ],
     "pluginsConfig": {
         "theme-creative": {
-            "styles": "",
             "showLevel": "true"
         },
         "duoshuo": {
