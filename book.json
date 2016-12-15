@@ -9,12 +9,22 @@
         "tbfed-pagefooter",
         "theme-creative",
         "toc-for-3",
-        "tree"
+        "tree",
+        "duoshuo"
     ],
     "pluginsConfig": {
         "theme-creative": {
             "styles": "",
             "showLevel": "true"
+        },
+        "sharing": {
+            "facebook": true,
+            "twitter": true,
+            "google": true,
+            "weibo": true,
+            "instapaper": false,
+            "vk": false,
+            "all": "facebook,google,twitter,weibo,instapaper"
         }
     }
 }
