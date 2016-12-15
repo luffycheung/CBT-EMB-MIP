@@ -18,6 +18,11 @@
         "duoshuo": {
             "short_name": "cheungluffy",
             "theme": "default"
+        },
+        "tbfed-pagefooter": {
+            "copyright":"&copy 北京赛佰特科技有限公司",
+            "modify_label": "修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
         }
     }
 }
