@@ -26,8 +26,8 @@
             "twitter": true,
             "google": true,
             "weibo": true,
-            "instapaper": false,
-            "vk": false,
+            "instapaper": true,
+            "vk": true,
             "all": "facebook,google,twitter,weibo,instapaper"
         }
     }
