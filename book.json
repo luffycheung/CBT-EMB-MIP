@@ -17,6 +17,10 @@
             "styles": "",
             "showLevel": "true"
         },
+        "duoshuo": {
+            "short_name": "cheungluffy",
+            "theme": "default"
+        },
         "sharing": {
             "facebook": true,
             "twitter": true,
