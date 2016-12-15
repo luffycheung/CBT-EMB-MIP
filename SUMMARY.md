@@ -16,7 +16,7 @@
     * [实验一. Android 内核移植与编译实验](chapter4/experiment01/android_kernel.md)
     * [实验二. 基于IIC总线的EEPROM驱动移植实验](chapter4/experiment02/kernel_eeprom.md)
     * [实验三. Android 文件系统实验](chapter4/experiment03/android_fs.md)
-* [第五章.  Android NKD开发](chapter5/README.md)
+* [第五章.  Android NKD 系统级应用开发](chapter5/README.md)
     * [实验一. Android NDK之Hello World开发入门实验](chapter5/experiment01/ndk_hello_world.md)
     * [实验二. 板载LED灯控制实验](chapter5/experiment02/onboard_led_control.md)
     * [实验三. 七段数码管控制实验](chapter5/experiment03/7_segmentLED.md)
