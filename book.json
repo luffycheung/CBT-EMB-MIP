@@ -7,7 +7,8 @@
         "tbfed-pagefooter",
         "theme-creative",
         "-theme-default",
-        "navigator",
+        "anchors",
+        "anchor-navigation-ex",
         "prism",
         "-highlight",
         "tree",
@@ -30,6 +31,9 @@
     "css": [
       "prismjs/themes/prism-okaidia.css"
     ]
-  }
+  },
+         "anchor-navigation-ex":{
+            "isRewritePageTitle":true
+        },       
     }
 }
