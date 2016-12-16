@@ -6,6 +6,7 @@
         "codesnippet",
         "tbfed-pagefooter",
         "theme-creative",
+        "-theme-default",
         "toc-for-3",
         "prism",
         "-highlight",
