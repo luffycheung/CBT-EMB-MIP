@@ -66,3 +66,108 @@ int ioctl(int fd, int number); //number为上述二维数组中对应的十六�
 //显示`0`(0xc0)
 ioctl(fd, 0xc0);
 ```
+<<<<<<< 7b647ecd48083c061990cc45d99435d8d21646a7
+=======
+
+## 实验步骤
+
+###JNI中间层程序编写
+
+从[实验原理](#实验原理)相关接口函数介绍，编写`digitron-jni.c`代码参考如下：
+```c
+#include <jni.h>
+#include <fcntl.h>  
+#include "android/log.h"
+
+static const char *TAG = "libs";
+#define LOGI(fmt, args...) __android_log_print(ANDROID_LOG_INFO,  TAG, fmt, ##args)
+#define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, TAG, fmt, ##args)
+#define LOGE(fmt, args...) __android_log_print(ANDROID_LOG_ERROR, TAG, fmt, ##args)
+
+#define DEVICE_NAME    "/dev/digitron"
+#define ZERO  0xc0
+#define ONE  0xf9
+#define TWO  0xa4
+#define THREE  0xb0
+#define FOURE  0x99
+#define FIVE  0x92
+#define SIX  0x82
+#define SEVEN  0xf8
+#define EIGHT  0x80
+#define NINE  0x90
+int fd;
+
+JNIEXPORT jint JNICALL
+Java_cbt_edu_iot_nixie_MainActivity_closeDigitron(JNIEnv *env, jclass type) {
+    if (fd >= 0) {
+        close(fd);
+        fd = -1;
+    }
+}
+
+JNIEXPORT jint JNICALL
+Java_cbt_edu_iot_nixie_MainActivity_setDigitronValue(JNIEnv *env, jclass type, jint digitValue) {
+
+    int i = digitValue;
+    switch (i) {
+        case 0:
+            ioctl(fd, ZERO);
+            break;
+      ...
+        case 9:
+            ioctl(fd, NINE);
+            break;
+    }
+    return 1;
+
+}
+
+JNIEXPORT jint JNICALL
+Java_cbt_edu_iot_nixie_MainActivity_openDigitronDriver(JNIEnv *env, jclass type) {
+
+    fd = open(DEVICE_NAME, O_RDWR);//打开设备
+    if (fd == -1) {
+        LOGI("open device %s error \n", DEVICE_NAME);
+        return 0;
+    }
+    else {
+        LOGI("open device %s ok! \n", DEVICE_NAME);
+        return 1;
+    }
+
+}
+```
+
+### 导入工程源码
+
+1.  打开Android Studio，从菜单栏选择 **File \> Open**。
+2.  弹窗中浏览选择光盘src目录下的Gradle工程 **CH05_NDK** ,点击**OK**导入。
+3.  等待工程构建完成后，在工具栏中的*Android App*列表中选择本实验例程**CH05_03_8_SegmentLED**,如**图5.2.1**所示：
+
+![数码管工程](/chapter5/experiment03/ch05_03.png)  
+
+**图5.2.1** 8段数码管工程
+
+### 演示运行
+
+
+- 运行前需将平台主板**JP18**处的跳线帽跳至_数码管_一侧。
+
+![数码管跳线帽](/chapter5/experiment03/nixie_jumper_cap.png)   
+
+**图5.3.1** 数码管跳线帽   
+
+- 平台主板通过miniUSB线连接电脑后，点击 **Run**
+![从菜单栏运行应用](https://developer.android.com/studio/images/buttons/toolbar-run.png)
+运行程序，界面如**图5.3.2**所示：
+
+![ui01](/chapter5/experiment03/ch05_03_ui_01.png)   
+
+**图5.3.2** 主界面  
+
+- 点击`加载驱动`按钮，弹窗请求权限点击`授权`。之后会在系统中生成字符驱动`/dev/digitron`。 
+
+- 点击右侧`打开`按钮后即可操作该驱动。点击下方的两个按键图标即可同步控制两个8段数码管中的数值。如**图5.3.2**所示：
+
+![ui03](/chapter5/experiment03/ch05_03_ui_03.png)   
+

@@ -25,5 +25,15 @@ NDK是Google公司推出的帮助Android开发者通过C/C++本地语言编写�
 NDK其实多了一个把.so和.apk打包的工具，这个是很重要的。
 而JNI开发并没有打包，只是把.so文件放到文件系统的特定位置。
 
+<<<<<<< 7b647ecd48083c061990cc45d99435d8d21646a7
 ##POSIX
 POSIX是Portable Operating System Interface foIX的首字母缩写词，是一套 IEEE 和ISO标准。这个标准定义了应用程序和操作系统之间的一个口。只要保证他们的程序设计的符合 POSIX 标准，开发人员就能确信他们的程序可以和支持SIX 的操作系统互联。这样的操作系统包括大部分版本的 UNIX。POSIX 标准现在由 IEEE 的一分支机构Portable Applications Standards Committee(PASC)维护。
+=======
+## POSIX
+POSIX是Portable Operating System Interface foIX的首字母缩写词，是一套 IEEE 和ISO标准。这个标准定义了应用程序和操作系统之间的一个口。只要保证他们的程序设计的符合 POSIX 标准，开发人员就能确信他们的程序可以和支持SIX 的操作系统互联。这样的操作系统包括大部分版本的 UNIX。POSIX 标准现在由 IEEE 的一分支机构Portable Applications Standards Committee(PASC)维护。
+
+##共阴极数码
+共阴极数码管是指将所有发光二极管的阴极接到一起形成公共阴极(COM)的数码管，共阴数码管在应用时应将公共极COM接到地线GND上，当某一字段发光二极管的阳极为高电平时，相应字段就点亮，当某一字段的阳极为低电平时，相应字段就不亮。
+
+
+>>>>>>> Updates book.json
