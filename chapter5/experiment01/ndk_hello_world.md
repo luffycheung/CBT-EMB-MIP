@@ -146,28 +146,14 @@ Files\*\* 目录。
 
 ![Figure-2.png-41.4kB](http://static.zybuluo.com/wl9739/ltzzvosh6y1uulszsk6l7z5y/Figure-2.png)
 
-1. **cpp** 目录存放你所有 native code
-
-   的地方，包括源码，头文件，预编译项目等。对于新项目，Android Studio
-
-   创建了一个 C++ 模板文件：**native-lib.cpp**，并且将该文件放到了你的
-
-   app 模块的 **src/main/cpp/** 目录下。这份模板代码提供了一个简答的
-
-   C++ 函数：`stringFromJNI()，该函数返回一个字符串：”Hello from`
-
-   C++”。
+1. **cpp** 目录存放你所有 native code的地方，包括源码，头文件，预编译项目等。对于新项目，Android Studio创建了一个 C++ 模板文件：**native-lib.cpp**，并且将该文件放到了你的
+app 模块的 **src/main/cpp/** 目录下。这份模板代码提供了一个简答的C++ 函数：`stringFromJNI()`，该函数返回一个字符串：”Hello from C++”。
 
 2. **External Build Files** 目录是存放 CMake 或 ndk-build
-
    构建脚本的地方。有点类似于 build.gradle 文件告诉 Gradle 如何编译你的
-
    APP 一样，CMake 和 ndk-build 也需要一个脚本来告知如何编译你的 native
-
    library。对于一个新的项目，Android Studio 创建了一个 CMake
-
    脚本：**CMakeLists.txt**，并且将其放到了你的 module 的根目录下。
-
 
 ### 编译运行示例 APP {#编译运行示例-APP}
 
