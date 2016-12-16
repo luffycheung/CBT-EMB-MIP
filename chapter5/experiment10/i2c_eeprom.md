@@ -1,7 +1,6 @@
 # 实验十. 基于IIC总线的EEPROM读写实验
 
 ---
-{% toc %}{% endtoc %}
 ## 1. 实验目的
 
 * 熟悉IIC设备驱动，能够通过JNI对IIC从设备EEPROM进行读写操作; 
