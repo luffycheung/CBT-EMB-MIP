@@ -22,4 +22,8 @@ EEPROM，或写作E2PROM，全称电子抹除式可复写只读内存 （英语�
 ## JNI与NDK的区别
 JNI是Java调用Native机制，是Java语言自己的特性全称为 Java Native Interface，类似的还有微软.Net Framework上的p/invoke，可以让C#或Visual Basic.NET调用C/C++的API，所以说JNI和Android没有关系，在PC上开发Java的应用，如果运行在Windows平台使用 JNI是是经常的，比如说读写Windows的注册表。
 NDK是Google公司推出的帮助Android开发者通过C/C++本地语言编写应用的开发包，包含了C/C++的头文件、库文件、说明文档和示例代码，我们可以理解为Windows Platform SDK一样，是纯C/C++编写的，但是Android并不支持纯C/C++编写的应用，同时NDK提供的库和函数功能很有限，仅仅处理些算法效率敏感的问题。
-NDK其实多了一个把.so和.apk打包的工具，这个是很重要的。而JNI开发并没有打包，只是把.so文件放到文件系统的特定位置。
+NDK其实多了一个把.so和.apk打包的工具，这个是很重要的。
+而JNI开发并没有打包，只是把.so文件放到文件系统的特定位置。
+
+##POSIX
+POSIX是Portable Operating System Interface foIX的首字母缩写词，是一套 IEEE 和ISO标准。这个标准定义了应用程序和操作系统之间的一个口。只要保证他们的程序设计的符合 POSIX 标准，开发人员就能确信他们的程序可以和支持SIX 的操作系统互联。这样的操作系统包括大部分版本的 UNIX。POSIX 标准现在由 IEEE 的一分支机构Portable Applications Standards Committee(PASC)维护。
