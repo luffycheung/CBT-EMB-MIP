@@ -25,6 +25,11 @@
         "duoshuo": {
             "short_name": "luffycheung",
             "theme": "default"
-        }
+        },
+         "prism": {
+    "css": [
+      "prismjs/themes/prism-okaidia.css"
+    ]
+  }
     }
 }
