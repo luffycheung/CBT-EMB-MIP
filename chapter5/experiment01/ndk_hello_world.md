@@ -20,16 +20,15 @@ Project\]\([https://developer.android.com/studio/projects/add-native-code.html\#
 
 > NDK可以自动地将so和Java应用一起打包，极大地减轻了开发人员的打包工作。
 
-* 那我们为什么要使用呢?   
+* 那我们为什么要使用呢?
 
-1. 代码的保护。由于apk的java层代码很容易被反编译，而C/C++库反汇难度较大。  
-2. 可以方便地使用现存的开源库。大部分现存的开源库都是用C/C++代码编写的。  
-3. 提高程序的执行效率。将要求高性能的应用逻辑使用C开发，从而提高应用程序的执行效率。  
-4. 便于移植。用C/C++写得库可以方便在其他的嵌入式平台上再次使用。   
+* 代码的保护。由于apk的java层代码很容易被反编译，而C/C++库反汇难度较大。
 
-NDK提供了一份稳定、功能有限的 API 头文件声明
+* 可以方便地使用现存的开源库。大部分现存的开源库都是用C/C++代码编写的。  
+* 提高程序的执行效率。将要求高性能的应用逻辑使用C开发，从而提高应用程序的执行效率。  
+* 便于移植。用C/C++写得库可以方便在其他的嵌入式平台上再次使用。   
 
-Google 明确声明该API是稳定的，在后续所有版本中都稳定支持当前发布的API。从该版本的NDK中看出，这些API支持的功能非常有限，包含有：C 标准库（libc）、标准数学库（libm）、压缩库（libz）、Log 库（liblog）。
+NDK提供了一份稳定、功能有限的 API 头文件声明Google 明确声明该API是稳定的，在后续所有版本中都稳定支持当前发布的API。从该版本的NDK中看出，这些API支持的功能非常有限，包含有：C 标准库（libc）、标准数学库（libm）、压缩库（libz）、Log 库（liblog）。
 
 ### JNI
 
@@ -49,37 +48,22 @@ Google 明确声明该API是稳定的，在后续所有版本中都稳定支持�
   1. 可以直接的在C/C++代码中加入断点，进行调试
   2. java引用的C/C++中的方法，可以直接ctrl+左键进入
   3. 对于include的头文件，或者库，也可以直接的进入
-  4. 不需要配置命令行操作,手动的生成头文件,不需要配置android.useDeprecatedNdk=true 属性
+  4. 不需要配置命令行操作,手动的生成头文件,不需要配置android.useDeprecatedNdk=true 属性使用 Android studio，你可以将 C 和 C++ 代码编译成 native library（即 .so文件），然后打包到你的 APK 中。你的 Java 代码可以通过 Java Native Interface（JNI）调用 native library 中的方法。
 
 
-使用 Android studio，你可以将 C 和 C++ 代码编译成 native library（即 .so  
-文件），然后打包到你的 APK 中。你的 Java 代码可以通过 Java Native  
-Interface（JNI）调用 native library 中的方法。
+Android Studio 默认使用 CMake 编译原生库。由于已经有大量的代码使用了ndk-build 来编译 native code，所以Android Studio同样也支持 ndk build。如果你想导入一个 ndk-build 库到你的 Android Studio项目中，请参阅后文的 **关联本地库与 Gradle**。然而，如果你创建了一个新的native 库工程，你应该使用 CMake。
 
-Android Studio 默认使用 CMake 编译原生库。由于已经有大量的代码使用了ndk-build 来编译 native code，所以Android Studio同样也支持 ndk build。如果你想导入一个 ndk-build 库到你的 Android Studio项目中，请参阅后文的 **关联本地库与 Gradle**。然而，如果你创建了一个新的  
-native 库工程，你应该使用 CMake。
+本篇文章将会说明如何使用 Android Studio 来创建、配置 Android项目，以支持 native code，以及将其运行到你的 app 中。
 
-本篇文章将会说明如何使用 Android Studio 来创建、配置 Android
-
-项目，以支持 native code，以及将其运行到你的 app 中。
-
-> 注意：要在 Android Studio 中使用 CMake 或者 ndk-build，你需要使用
->
-> Android Studio 2.2 或更高的版本，同时需要配合使用 Android Plugin for
->
-> Gradle 2.2.0 及以上的版本。
+> 注意：要在 Android Studio 中使用 CMake 或者 ndk-build，你需要使用Android Studio 2.2 或更高的版本，同时需要配合使用 Android Plugin for Gradle 2.2.0 及以上的版本。
 
 ## 下载 NDK 和构建工具 {#下载-NDK-和构建工具}
 
 要编译和调试本地代码（native code），你需要下面的组件：
 
-* `The Android Native Development Kit (NDK)`: 让你能在 Android
+* `The Android Native Development Kit (NDK)`: 让你能在 Android上面使用 C 和 C++ 代码的工具集。
 
-  上面使用 C 和 C++ 代码的工具集。
-
-* `CMake`: 外部构建工具。如果你准备只使用 ndk-build
-
-  的话，可以不使用它。
+* `CMake`: 外部构建工具。如果你准备只使用 ndk-build的话，可以不使用它。
 
 * `LLDB`: Android Studio 上面调试本地代码的工具。
 
@@ -106,54 +90,37 @@ native 库工程，你应该使用 CMake。
 
 工程很像。但是有几点需要留意的地方：
 
-1. 在 **Configure your new project** 选项中，勾选 \*\*Include C++
-
-   Support\*\* 选项。
+1. 在 **Configure your new project** 选项中，勾选 \*\*Include C++Support\*\* 选项。
 
 2. 点击 Next，后面的流程和创建普通的 Android studio 工程一样。
 
-3. 在 **Customize C++ Support**
-
-   选项卡中。你有下面几种方式来自定义你的项目：
+3. 在 **Customize C++ Support**选项卡中。你有下面几种方式来自定义你的项目：
 
 
-* **C++ Standard**：点击下拉框，可以选择标准 C++，或者选择默认
+* **C++ Standard**：点击下拉框，可以选择标准 C++，或者选择默认CMake 设置的 **Toolchain Default** 选项。
 
-  CMake 设置的 **Toolchain Default** 选项。
+* **Exceptions Support**：如果你想使用有关 C++异常处理的支持，就勾选它。勾选之后，Android Studio 会在 module层的 build.gradle 文件中的 **cppFlags** 中添加 **-fexcetions**标志。
 
-* **Exceptions Support**：如果你想使用有关 C++
-
-  异常处理的支持，就勾选它。勾选之后，Android Studio 会在 module
-
-  层的 build.gradle 文件中的 **cppFlags** 中添加 **-fexcetions**
-
-  标志。
-
-* **Runtime Type Information Support**：如果你想支持
-
-  RTTI，那么就勾选它。勾选之后，Android Studio 会在 module 层的
-
-  build.gradle 文件中的 **cppFlags** 中添加 **-frtti** 标志。
+* **Runtime Type Information Support**：如果你想支持RTTI，那么就勾选它。勾选之后，Android Studio 会在 module 层的build.gradle 文件中的 **cppFlags** 中添加 **-frtti** 标志。
 
 
 1. 点击 “Finish”。
 
-当 Android Studio 完成新项目创建后，打开 **Project** 面板，选择
-
-**Android** 视图。Android Studio 会添加 **cpp** 和 \*\*External Build
+当 Android Studio 完成新项目创建后，打开 **Project** 面板，选择**Android** 视图。Android Studio 会添加 **cpp** 和 \*\*External Build
 
 Files\*\* 目录。
 
 ![Figure-2.png-41.4kB](http://static.zybuluo.com/wl9739/ltzzvosh6y1uulszsk6l7z5y/Figure-2.png)
 
-1. **cpp** 目录存放你所有 native code的地方，包括源码，头文件，预编译项目等。对于新项目，Android Studio创建了一个 C++ 模板文件：**native-lib.cpp**，并且将该文件放到了你的
-app 模块的 **src/main/cpp/** 目录下。这份模板代码提供了一个简答的C++ 函数：`stringFromJNI()`，该函数返回一个字符串：”Hello from C++”。
+1. **cpp** 目录存放你所有 native code的地方，包括源码，头文件，预编译项目等。对于新项目，Android Studio创建了一个 C++ 模板文件：**native-lib.cpp**，并且将该文件放到了你的  
+   app 模块的 **src/main/cpp/** 目录下。这份模板代码提供了一个简答的C++ 函数：`stringFromJNI()`，该函数返回一个字符串：”Hello from C++”。
 
-2. **External Build Files** 目录是存放 CMake 或 ndk-build
-   构建脚本的地方。有点类似于 build.gradle 文件告诉 Gradle 如何编译你的
-   APP 一样，CMake 和 ndk-build 也需要一个脚本来告知如何编译你的 native
-   library。对于一个新的项目，Android Studio 创建了一个 CMake
+2. **External Build Files** 目录是存放 CMake 或 ndk-build  
+   构建脚本的地方。有点类似于 build.gradle 文件告诉 Gradle 如何编译你的  
+   APP 一样，CMake 和 ndk-build 也需要一个脚本来告知如何编译你的 native  
+   library。对于一个新的项目，Android Studio 创建了一个 CMake  
    脚本：**CMakeLists.txt**，并且将其放到了你的 module 的根目录下。
+
 
 ### 编译运行示例 APP {#编译运行示例-APP}
 
