@@ -104,7 +104,7 @@ Android Studio 默认使用 CMake 编译原生库。由于已经有大量的代�
 * **Runtime Type Information Support**：如果你想支持RTTI，那么就勾选它。勾选之后，Android Studio 会在 module 层的build.gradle 文件中的 **cppFlags** 中添加 **-frtti** 标志。
 
 
-1. 点击 “Finish”。
+4. 点击 “Finish”。
 
 当 Android Studio 完成新项目创建后，打开 **Project** 面板，选择**Android** 视图。Android Studio 会添加 **cpp** 和 \*\*External Build
 
