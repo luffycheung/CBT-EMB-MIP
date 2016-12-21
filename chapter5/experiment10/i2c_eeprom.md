@@ -24,7 +24,7 @@
 
 ###JNI中间层编程范例  
 
-```
+```c
 #include <jni.h>
 #include <fcntl.h>
 #include<unistd.h>
@@ -156,13 +156,13 @@ Java_cbt_edu_iot_eeprom_MainActivity_eeprom_1write(JNIEnv *env, jclass type, jby
 运行程序。
 - 点击界面中的`WRITE EEPROM`按钮，将下方的文本写入EEPROM中，下方`Status`会显示当前操作的返回结果，如**图5.3.1**所示：
 
-![主界面](chapter5/experiment10/ch05_10_ui01.png)
+![主界面](/chapter5/experiment10/ch05_10_ui01.png)
 
 **图5.3.1** 主界面
 
 - 点击右侧的`READ EEPROM`按钮读取当前EEPROM中的数据，下方`Status`会实时显示当前读取到的数据的长度，如**图5.3.2**所示：
 
-![读取数据](chapter5/experiment10/ch05_10_ui02.png)
+![读取数据](/chapter5/experiment10/ch05_10_ui02.png)
 
 **图5.3.2** 读取数据
 

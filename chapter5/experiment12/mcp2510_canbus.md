@@ -24,7 +24,7 @@ CAN总线控制器`MCP2510`硬件原理及使用SPI子系统注册MCP2510 CAN总
 ### 驱动接口函数
 
 在`can.h`头文件中定义操作CAN总线的宏定义及结构体，具体如下：
-```
+```c
 #ifndef CAN_H__
 #define CAN_H__
 
@@ -76,16 +76,16 @@ typedef struct {
 ```
 
 - 打开设备
-```
+```c
  fd = open("dev/can0", O_RDWR);
 ```
 
 - 关闭设备
-```
+```c
  close(fd);
 ```
 - 初始化CAN设备
-```
+```c
   ioctl(fd, CAN_IOCTRL_PRINTRIGISTER, 1);
         ioctl(fd, CAN_IOCTRL_SETID, id);
         if (isLoop) { //是否回环标志位
@@ -93,7 +93,7 @@ typedef struct {
         }
 ```
 - 读取数据
-```
+```c
  char temp[16]; //保存CAN数据帧中的数据位数据
     bzero(temp, 16);
     int k = 0;
@@ -111,7 +111,7 @@ typedef struct {
     }
 ```
 - 写数据
-```
+```c
 static void CanSendString(char *pstr) {
     CanData data;
     int len = strlen(pstr);
@@ -150,6 +150,6 @@ static void CanSendString(char *pstr) {
 若打开成功下方的`清空`和`发送`按钮才可以使能。
 - 在左侧文本框中输入相应英文字符，点击下方`发送`按钮。发送成功会在右侧接收区显示，如**图5.2.1**所示：
 
-![CAN](chapter5/experiment12/ch05_12_ui.png)
+![CAN](/chapter5/experiment12/ch05_12_ui.png)
 
 **图5.2.1** CAN测试程序
