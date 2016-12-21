@@ -13,7 +13,7 @@
     * [实验一. Android ADB调试实验](chapter3/experiment01/android_adb_debug.md)
     * [实验二. Intent 组件间通讯实验](chapter3/experiment02/intent.md)
 * [第四章.  Android NDK 系统级应用开发](chapter4/README.md)
-    * [实验一. Android NDK之Hello World开发入门实验](chapter5/experiment01/ndk_hello_world.md)
+    * [实验一. Android NDK之Hello World开发入门实验](chapter4/experiment01/ndk_hello_world.md)
     * [实验二. 板载LED灯控制实验](chapter4/experiment02/onboard_led_control.md)
     * [实验三. 八段数码管控制实验](chapter4/experiment03/8_segmentLED.md)
     * [实验四. 步进电机控制实验](chapter4/experiment04/stepping_motor.md)
