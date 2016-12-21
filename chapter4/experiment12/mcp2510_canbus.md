@@ -150,6 +150,6 @@ static void CanSendString(char *pstr) {
 若打开成功下方的`清空`和`发送`按钮才可以使能。
 - 在左侧文本框中输入相应英文字符，点击下方`发送`按钮。发送成功会在右侧接收区显示，如**图5.2.1**所示：
 
-![CAN](/chapter5/experiment12/ch05_12_ui.png)
+![CAN](/chapter4/experiment12/ch05_12_ui.png)
 
 **图5.2.1** CAN测试程序

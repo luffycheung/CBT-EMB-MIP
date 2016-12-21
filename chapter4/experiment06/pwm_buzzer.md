@@ -117,4 +117,4 @@ Java_cbt_edu_iot_cbt4412_1buzzer_MainActivity_buzzerExit(JNIEnv *env, jclass typ
 
 - 点击右侧`打开`按钮后即可操作该驱动。点击下方按钮控制其音量加减及播放暂停。如**图5.3.1**所示：
 
-![ui](/chapter5/experiment06/ch05_06_ui.png) 
+![ui](/chapter4/experiment06/ch05_06_ui.png) 

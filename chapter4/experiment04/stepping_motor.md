@@ -137,4 +137,4 @@ Java_cbt_edu_iot_steppermoter_MainActivity_moterExit(JNIEnv *env, jobject instan
 
 - 点击右侧`打开`按钮后即可操作该驱动。点击下方的两个按钮控制其正反转。如**图5.3.1**所示：
 
-![ui](/chapter5/experiment04/ch05_04_ui.png) 
+![ui](/chapter4/experiment04/ch05_04_ui.png) 

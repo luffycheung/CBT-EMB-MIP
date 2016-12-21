@@ -97,7 +97,7 @@
 ### 在Android Studio下创建支持C/C++的新项目   
 
 创建步骤参见本章实验一，本实验例程中创建的项目如`图5.1`所示。
-![LED工程](/chapter5/experiment02/ch05_02.png)   
+![LED工程](/chapter4/experiment02/ch05_02.png)   
 
 **图5.1** LED项目工程   
 
@@ -218,10 +218,10 @@ Java_cbt_edu_iot_leds_MainActivity_ledsOpen(JNIEnv *env, jobject instance) {
 
 ### 编写UI界面及代码
 
-- 将光盘目录`src\chapter5\experiment02\res`目录下的**drawable**、**layout**和**values**三个文件夹拷贝至本项目工程的**res**目录下。
+- 将光盘目录`src\chapter4\experiment02\res`目录下的**drawable**、**layout**和**values**三个文件夹拷贝至本项目工程的**res**目录下。
 
 - 打开`activity_main.xml`界面如图5.1所示：
-![主界面](/chapter5/experiment02/activity_main.png)   
+![主界面](/chapter4/experiment02/activity_main.png)   
 
 **图5.1** 主界面   
 
@@ -283,7 +283,7 @@ Java_cbt_edu_iot_leds_MainActivity_ledsOpen(JNIEnv *env, jobject instance) {
 
 操作应用程序之前需将多核心平台底板5路LED灯左侧的跳线帽跳到LED处，如**图5.2**所示：   
 
-![LED跳线帽](/chapter5/experiment02/led_jumper_cap.png)   
+![LED跳线帽](/chapter4/experiment02/led_jumper_cap.png)   
 
 **图5.2** LED跳线帽   
 
@@ -291,7 +291,7 @@ Java_cbt_edu_iot_leds_MainActivity_ledsOpen(JNIEnv *env, jobject instance) {
 
 运行程序后，首先点击`加载驱动(modules)`按键，会弹出如**图5.3**对话框，请求获取超级用户权限，点击`授权`。   
 
-![加载驱动](/chapter5/experiment02/load_modules.png)   
+![加载驱动](/chapter4/experiment02/load_modules.png)   
 
 **图5.3** 加载驱动   
 
@@ -303,7 +303,7 @@ Android Studio界面下方的**Android Monitor**里的logcat会打印如下信�
 
 之后便可以点击下方的**Switch**按钮，对5个LED灯进行控制，如**图5.4**所示：   
 
-![LED灯控制](/chapter5/experiment02/led1_control.png)
+![LED灯控制](/chapter4/experiment02/led1_control.png)
 
 **图5.4** LED灯控制
 

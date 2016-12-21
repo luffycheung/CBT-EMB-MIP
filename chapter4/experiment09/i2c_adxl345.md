@@ -335,12 +335,12 @@ Java_cbt_edu_iot_adxl345_MainActivity_adxl345Exit(JNIEnv *env, jclass type) {
 运行程序。
 - 界面会显示当前多核心平台设备的三轴加速度实时数值，如**图5.3.1**所示：
 
-![adxl345界面](/chapter5/experiment09/ch05_09_ui.png)
+![adxl345界面](/chapter4/experiment09/ch05_09_ui.png)
 
 **图5.3.1** 主界面
 
 - ADXL345用户手册中输出响应与相对于重力的方向的关系如**图5.3.2**所示：
 
-![方向](/chapter5/experiment09/ch05_09_adxl345.png)
+![方向](/chapter4/experiment09/ch05_09_adxl345.png)
 
 **图5.3.2** 输出响应与相对于重力的方向的关系

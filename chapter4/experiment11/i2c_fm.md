@@ -18,7 +18,7 @@
 
 ### 硬件连接
 
-![连接电路](/chapter5/experiment11/tea5767.png)
+![连接电路](/chapter4/experiment11/tea5767.png)
 
 **图4.1** FM模块(M1)与主板的连接电路
 
@@ -173,6 +173,6 @@ into_clience(fd);
 运行程序。
 - 界面启动后会自动搜台，之后点击下方的按键即可收听指定频段的电台节目。如**图5.2.1**所示：
 
-![FM](/chapter5/experiment11/ch05_11_ui.png)
+![FM](/chapter4/experiment11/ch05_11_ui.png)
 
 **图5.2.1** FM收音机

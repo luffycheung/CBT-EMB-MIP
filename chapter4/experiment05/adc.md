@@ -118,7 +118,7 @@ Java_cbt_edu_iot_cbt4412_1adc_MainActivity_adcRead(JNIEnv *env, jclass type) {
 ![从菜单栏运行应用](https://developer.android.com/studio/images/buttons/toolbar-run.png)
 运行程序。界面中会显示旋转编码器及光敏电阻的数据，如**图5.3.1**所示：
 
-![ui](/chapter5/experiment05/ch05_05_ui.png) 
+![ui](/chapter4/experiment05/ch05_05_ui.png) 
 
 **图5.3.1** ADC
 

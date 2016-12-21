@@ -17,7 +17,7 @@
 
 ### 主板电路原理图
 
-![数码管](/chapter5/experiment03/Nixie.png)   
+![数码管](/chapter4/experiment03/Nixie.png)   
 
 **图4.1** 原理图   
 
@@ -144,7 +144,7 @@ Java_cbt_edu_iot_nixie_MainActivity_openDigitronDriver(JNIEnv *env, jclass type)
 2.  弹窗中浏览选择光盘src目录下的Gradle工程 **CH05_NDK** ,点击**OK**导入。
 3.  等待工程构建完成后，在工具栏中的*Android App*列表中选择本实验例程**CH05_03_8_SegmentLED**,如**图5.2.1**所示：
 
-![数码管工程](/chapter5/experiment03/ch05_03.png)  
+![数码管工程](/chapter4/experiment03/ch05_03.png)  
 
 **图5.2.1** 8段数码管工程
 
@@ -153,7 +153,7 @@ Java_cbt_edu_iot_nixie_MainActivity_openDigitronDriver(JNIEnv *env, jclass type)
 
 - 运行前需将平台主板**JP18**处的跳线帽跳至_数码管_一侧。
 
-![数码管跳线帽](/chapter5/experiment03/nixie_jumper_cap.png)   
+![数码管跳线帽](/chapter4/experiment03/nixie_jumper_cap.png)   
 
 **图5.3.1** 数码管跳线帽   
 
@@ -161,7 +161,7 @@ Java_cbt_edu_iot_nixie_MainActivity_openDigitronDriver(JNIEnv *env, jclass type)
 ![从菜单栏运行应用](https://developer.android.com/studio/images/buttons/toolbar-run.png)
 运行程序，界面如**图5.3.2**所示：
 
-![ui01](/chapter5/experiment03/ch05_03_ui_01.png)   
+![ui01](/chapter4/experiment03/ch05_03_ui_01.png)   
 
 **图5.3.2** 主界面  
 
@@ -169,5 +169,5 @@ Java_cbt_edu_iot_nixie_MainActivity_openDigitronDriver(JNIEnv *env, jclass type)
 
 - 点击右侧`打开`按钮后即可操作该驱动。点击下方的两个按键图标即可同步控制两个8段数码管中的数值。如**图5.3.2**所示：
 
-![ui03](/chapter5/experiment03/ch05_03_ui_03.png)   
+![ui03](/chapter4/experiment03/ch05_03_ui_03.png)   
 
