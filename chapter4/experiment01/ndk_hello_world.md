@@ -138,7 +138,7 @@ Studio、创建或配置项目以支持 Android 上的原生代码，以及构�
   **图 3.**创建本地方法。   
   跳转到`native-lib.cpp`会自动生成对应的底层方法。   
 
-```cpp
+```c
   JNIEXPORT jstring JNICALL
 Java_cbt_edu_iot_ndksample_MainActivity_stringFromJNI2(JNIEnv *env, jobject instance) {
 
@@ -150,7 +150,7 @@ Java_cbt_edu_iot_ndksample_MainActivity_stringFromJNI2(JNIEnv *env, jobject inst
 ```
    
 参考之前的方法将错误修复。   
-```cpp
+```c
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_cbt_edu_iot_ndksample_MainActivity_stringFromJNI2(JNIEnv *env, jobject instance) {
