@@ -133,7 +133,7 @@ Studio、创建或配置项目以支持 Android 上的原生代码，以及构�
     public native String stringFromJNI2();
 ```
 新方法`stringFromJNI2()`有红色警告，将光标定位到该函数并按下<kbd>alt</kbd>+<kbd>Enter</kbd>键。会弹出如图3所示的下拉列表，选择`Create function ...`选项   
-![创建native方法](/chapter5/experiment01/manual_add_native_method.png)   
+![创建native方法](/chapter4/experiment01/manual_add_native_method.png)   
 
   **图 3.**创建本地方法。   
   跳转到`native-lib.cpp`会自动生成对应的底层方法。   
