@@ -2,21 +2,21 @@
 
 ---
 
-## 1. 实验目的
+##  实验目的
 
 * 熟悉平台主板外围设备EEPROM芯片AT24CXX的电路结构与工作原理;
 * 掌握IIC总线设备驱动移植流程;
 
-## 2. 实验环境
+##  实验环境
 
 * 硬件：CBT-EMB-MIP 实验平台,PC机;
 * 软件：VMware,Linux OS;
 
-## 3. 实验内容
+##  实验内容
 
 * 移植IIC总线EEPROM设备驱动;
 
-## 4. 实验原理
+## [实验原理](#实验原理)
 
 * AT24CXX芯片简介
 
@@ -34,7 +34,7 @@ AT24CXX中带有片内地址寄存器。每写入或读出一个数据字节后�
 
 ## 5. 实验步骤
 
-**1.配置内核**
+### **配置内核**
 
 * _打开I2C支持_
 
@@ -56,7 +56,7 @@ Location:
 
 行内代码块 `code`
 
-**2.修改代码,在内核板级支持包中增加AT24CXX设备配置**
+### **修改代码,在内核板级支持包中增加AT24CXX设备配置**
 
 linux-3.5内核中已经包含at24cxx芯片的驱动源码，具体位置为：
 
@@ -96,9 +96,24 @@ static struct i2c_board_info smdk4x12_i2c_devs0[] __initdata = {
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 
-其最低位是读写标志位，但是在Linux中，I2C设备地址的最高位为0，而低七位地址就是手册中去掉R/W的剩余7位。在_**4.实验原理**_中可知A2 A1 A0引脚接GND，因此，地址为0b 01010000（0x50）。
+其最低位是读写标志位，但是在Linux中，I2C设备地址的最高位为0，而低七位地址就是手册中去掉R/W的剩余7位。在[实验原理](#实验原理)中可知A2 A1 A0引脚接GND，因此，地址为0b 01010000（0x50）。
 
-**3.编译并烧写内核**
+### **编译并烧写内核**
 
-**4.在终端中查看eeprom设备**
+按照Android光盘配套烧写文档将新生成的内核镜像文件zImage 烧写到Android平台设备中（Android系统如何安装详见Android光盘\IMG\Cortex-A9系统烧写说明.pdf）
 
+### **在终端中查看eeprom设备**
+
+新内核烧写成功后启动Android 实验平台，可以在串口终端中查看生成的`eeprom`设备。
+
+```
+root@android:cd /sys/bus/platform/devices/s3c2440-i2c.0/i2c-0/0-0050
+root@android:/sys/bus/platform/devices/s3c2440-i2c.0/i2c-0/0-0050 # ls
+driver
+eeprom
+modalias
+name
+power
+subsystem
+uevent
+```
